@@ -5,14 +5,13 @@ from config import Config
 
 def ask_chatbot(chat_bot: Chatbot, prompt: str, conversation_id, parent_id):
     prev_text = ""
-    message = ""
     for data in chat_bot.ask(prompt, conversation_id, parent_id):
         message = data["message"][len(prev_text) :]
         print(message, end="", flush=True)
         prev_text = data["message"]
         conversation_id = data["conversation_id"]
         parent_id = data["parent_id"]
-    return message, conversation_id, parent_id
+    return prev_text, conversation_id, parent_id
 
 
 def main():
