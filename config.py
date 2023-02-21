@@ -10,4 +10,5 @@ class Config:
         # "access_token": environ.get("CHATBOT_ACCESS_TOKEN"),
         "email": environ.get("CHATBOT_EMAIL"),
         "password": environ.get("CHATBOT_PASSWORD"),
+        "proxy": environ.get("PROXY"),
     }
